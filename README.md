@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Simple TaskList with React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Setup
 
-Currently, two official plugins are available:
+- Create the following in '/src/components':
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  - `Form.tsx` (with a basic return)
+  - `List.tsx` (with a basic return)
 
-## Expanding the ESLint configuration
+  - Create `types.ts` in '/src/types':
+    - Export a type named 'Task' with the following properties:
+      - `id: string`
+      - `description: string`
+      - `isCompleted: boolean`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- In `App.tsx`, import 'Task' type and set up a state value of type 'Task[]'.
+- Also, import and render 'Form' and 'List' in `App.tsx`.
 
-- Configure the top-level `parserOptions` property like this:
+### Form
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Create a form with a single input.
+- Set up a controlled input.
+- Set up a form submit handler and ensure it checks for empty values.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Add Task
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- In `App.tsx`, create an 'addTask' function that adds a new task to the list.
+- Pass 'addTask' as a prop to 'Form'.
+- In 'Form', set up the correct type and invoke 'addTask' if the input has a value.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Toggle Task
+
+- In `App.tsx`, create a 'toggleTask' function that toggles 'isCompleted'.
+- Pass the function and list as props to 'List'.
+- In `List.tsx`:
+  - Set up the correct type for props.
+  - Render the list.
+  - Set up a checkbox in each item and add an 'onChange' handler.
+  - Invoke the 'toggleTask' functionality.
+
+### Local Storage
+
+- Incorporate LocalStorage into the application.
+
+## 10 - Tasks
+
+- create Form, List components
