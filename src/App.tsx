@@ -33,6 +33,7 @@ function App() {
 
   return (
     <main>
+      <h2 className="mb-1">Simple TaslkList</h2>
       <Form addTask={addTask} />
       <List tasks={tasks} toggleTask={toggleTask} />
     </main>
