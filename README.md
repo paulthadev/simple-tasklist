@@ -1,5 +1,9 @@
 # Simple TaskList with React + TypeScript + Vite
 
+## Main Features - Tasks
+
+- create Form, List components
+
 ### Setup
 
 - Create the following in '/src/components':
@@ -41,7 +45,3 @@
 ### Local Storage
 
 - Incorporate LocalStorage into the application.
-
-## 10 - Tasks
-
-- create Form, List components
